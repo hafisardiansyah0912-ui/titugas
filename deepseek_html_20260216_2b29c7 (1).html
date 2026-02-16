@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brosur Titugas - Jasa Tugas & Skripsi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Desain Ikan/Koi Modern */
+        .brochure {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 50px 50px 30px 30px;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+            border: 5px solid #ffd700;
+        }
+
+        /* Elemen ikan di background */
+        .brochure::before {
+            content: "🐟";
+            font-size: 150px;
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+            z-index: 0;
+        }
+
+        .brochure::after {
+            content: "🐠";
+            font-size: 120px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            opacity: 0.1;
+            transform: rotate(10deg);
+            z-index: 0;
+        }
+
+        /* Header dengan desain modern */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 30px 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid #ffd700;
+        }
+
+        /* Gelombang air */
+        .header .waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: repeating-linear-gradient( transparent, transparent 5px, rgba(255,255,255,0.2) 5px, rgba(255,255,255,0.2) 10px);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Logo Gambar dari file image.png */
+        .logo-image {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            animation: swim 3s ease-in-out infinite;
+            overflow: hidden;
+            border: 3px solid #ffd700;
+        }
+
+        @keyframes swim {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(2deg); }
+        }
+
+        /* Simulasi logo Titugas dari gambar */
+        .logo-image .logo-content {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #ffd700, #ffaa00);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #1e3c72;
+            font-weight: bold;
+        }
+
+        .logo-image .logo-content span:first-child {
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        .logo-image .logo-content span:last-child {
+            font-size: 12px;
+            background: #1e3c72;
+            color: #ffd700;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-top: 5px;
+        }
+
+        .logo-text {
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(145deg, #ffd700, #fff5cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-sub {
+            font-size: 18px;
+            opacity: 0.95;
+            letter-spacing: 2px;
+            background: rgba(255,215,0,0.2);
+            padding: 5px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        /* Slogan */
+        .slogan {
+            margin-top: 20px;
+            font-size: 18px;
+            font-style: italic;
+            border-left: 5px solid #ffd700;
+            padding-left: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 0 30px 30px 0;
+        }
+
+        /* Info Kontak - Hanya WhatsApp */
+        .contact-bar {
+            background: #ffd700;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: #2a5298;
+        }
+
+        .wa-number {
+            background: #25D366;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+        }
+
+        .wa-number:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .wa-large {
+            font-size: 24px;
+            padding: 15px 40px;
+        }
+
+        /* Container harga */
+        .price-container {
+            display: flex;
+            padding: 40px;
+            gap: 30px;
+            background: #f8f9fa;
+            position: relative;
+            z-index: 1;
+        }
+
+        .column {
+            flex: 1;
+            background: white;
+            border-radius: 30px;
+            padding: 30px 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid rgba(255,215,0,0.3);
+        }
+
+        .column:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+            border-color: #ffd700;
+        }
+
+        .column h2 {
+            color: #1e3c72;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .column h2 i {
+            color: #ffd700;
+            font-size: 30px;
+        }
+
+        .price-list {
+            list-style: none;
+        }
+
+        .price-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #ffd700;
+            transition: all 0.3s;
+        }
+
+        .price-item:hover {
+            background: #fff3cd;
+            transform: scale(1.02);
+        }
+
+        .price-title {
+            font-weight: bold;
+            color: #2a5298;
+            margin-bottom: 8px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-nominal {
+            color: #28a745;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .price-desc {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+            padding-top: 5px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .featured-item {
+            background: linear-gradient(145deg, #fff3cd, #fff9e6);
+            border: 2px solid #ffd700;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        /* Bubble animation */
+        .bubble {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        @keyframes bubble {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+
+        /* Stiker WA mengambang */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+            z-index: 100;
+            text-decoration: none;
+            border: 3px solid white;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .price-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .contact-bar {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .slogan {
+                text-align: center;
+            }
+            
+            .logo-text {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tombol WA Mengambang -->
+    <a href="https://wa.me/6285274863811" class="float-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="brochure">
+        <!-- Header dengan logo gambar -->
+        <div class="header">
+            <div class="logo-container">
+                <!-- Logo dari image.png -->
+                <div class="logo-image">
+                    <div class="logo-content">
+                        <span>Titugas</span>
+                        <span>JOKI</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="logo-text">Titugas</div>
+                    <div class="logo-sub">Joki Tugas & Skripsi</div>
+                </div>
+            </div>
+            <div class="slogan">
+                🐟 "Ikan yang rajin berenang, pasti sampai ke laut lepas. Begitu juga tugasmu, pasti selesai bersama Titugas!"
+            </div>
+            <div class="waves"></div>
+        </div>
+
+        <!-- Contact Bar - Hanya WhatsApp -->
+        <div class="contact-bar">
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <span>0852-7486-3811</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Online 24 Jam</span>
+            </div>
+            <a href="https://wa.me/6285274863811" class="wa-number">
+                <i class="fab fa-whatsapp"></i>
+                Chat via WhatsApp
+            </a>
+        </div>
+
+        <!-- Daftar Harga -->
+        <div class="price-container">
+            <!-- Kolom Tugas Biasa -->
+            <div class="column">
+                <h2>
+                    <i class="fas fa-book-open"></i>
+                    Tugas Biasa
+                </h2>
+                <ul class="price-list">
+                    <li class="price-item">
+                        <div class="price-title">
+                            <span>📄 Makalah</span>
+                            <span class="price-nominal">30k - 40k</span>
+                        </div>
+                        <div class="price-desc">Termasuk daftar pustaka & cover</div>
+                    </li>
+                    <li class="price-item">
+                        <div class="price-title">
+                            <span>📊 PPT</span>
+                            <span class="price-nominal">30k - 40k</span>
+                        </div>
+                        <div class="price-desc">Desain menarik & profesional</div>
+                    </li>
+                    <li class="price-item">
+                        <div class="price-title">
+                            <span>📝 Tugas - Tugas</span>
+                            <span class="price-nominal">Mulai 25k</span>
+                        </div>
+                        <div class="price-desc">Sesuai dengan kebutuhan</div>
+                    </li>
+                    <li class="price-item">
+                        <div class="price-title">
+                            <span>📋 Proposal Tugas</span>
+                            <span class="price-nominal">45k</span>
+                        </div>
+                        <div class="price-desc">Struktur rapi & siap presentasi</div>
+                    </li>
+                    <li class="price-item">
+                        <div class="price-title">
+                            <span>✍️ Essay</span>
+                            <span class="price-nominal">35k - 45k</span>
+                        </div>
+                        <div class="price-desc">Argumentasi kuat & orisinal</div>
+                    </li>
+                    <li class="price-item featured-item">
+                        <div class="price-title">
+                            <span>📑 Laporan - Laporan</span>
+                            <span class="price-nominal">Mulai 45k</span>
+                        </div>
+                        <div class="price-desc">Laporan PKL, magang, penelitian</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Kolom Tugas Skripsi -->
+            <div class="column">
+                <h2>
+                    <i class="fas fa-graduation-cap"></i>
+                    Tugas Skripsi
+                </h2>
+                
+                <div style="margin-bottom: 25px;">
+                    <div class="price-item">
+                        <div class="price-title" style="color: #c0392b;">
+                            <span>🎯 A. Judul</span>
+                            <span class="price-nominal">50k/judul</span>
+                        </div>
+                        <div class="price-desc">Revisi Unlimited Maksimal 1 Bulan</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #2a5298; margin-bottom: 15px;">B. Proposal</h3>
+                    <div class="price-item">
+                        <div class="price-title">
+                            <span>Paket 1 (No Revisi)</span>
+                            <span class="price-nominal">150k</span>
+                        </div>
+                    </div>
+                    <div class="price-item featured-item">
+                        <div class="price-title">
+                            <span>Paket 2 (Revisi Unlimited)</span>
+                            <span class="price-nominal">300k</span>
+                        </div>
+                        <div class="price-desc">Revisi Unlimited Maksimal 1 Bulan</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: #2a5298; margin-bottom: 15px;">C. Bab 4 & 5</h3>
+                    <div class="price-item">
+                        <div class="price-title">
+                            <span>Paket Data Lengkap</span>
+                            <span class="price-nominal">300k</span>
+                        </div>
+                        <div class="price-desc">Jika Data Sudah Lengkap dan Dijamin Lolos</div>
+                    </div>
+                    <div class="price-item featured-item">
+                        <div class="price-title">
+                            <span>Paket Lengkap + Olah Data</span>
+                            <span class="price-nominal">370k</span>
+                        </div>
+                        <div class="price-desc">Tabulasi Data Mentahan & Dijamin Lolos, Semua Kuesioner Dibuatkan Sekalian</div>
+                    </div>
+                    <div style="margin-top: 10px; font-size: 12px; color: #666; background: #e7f3ff; padding: 10px; border-radius: 10px;">
+                        <i class="fas fa-clock"></i> Kedua opsi: Revisi Unlimited Maksimal 5 Minggu
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer dengan WA (email dihilangkan) -->
+        <div class="footer">
+            <h3>🐟 Titugas - Joki Tugas & Skripsi 🐟</h3>
+            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 25px;">
+                <span><i class="fas fa-check-circle" style="color: #ffd700;"></i> 100% Orisinal</span>
+                <span><i class="fas fa-check-circle" style="color: #ffd700;"></i> Revisi Unlimited</span>
+                <span><i class="fas fa-check-circle" style="color: #ffd700;"></i> Dijamin Lolos</span>
+                <span><i class="fas fa-check-circle" style="color: #ffd700;"></i> Harga Bersahabat</span>
+            </div>
+            
+            <!-- Tombol WA besar -->
+            <a href="https://wa.me/6285274863811" class="wa-number wa-large" style="margin: 10px auto 20px; font-size: 24px;">
+                <i class="fab fa-whatsapp"></i>
+                0852-7486-3811
+            </a>
+            
+            <!-- Hanya nomor WA tanpa email -->
+            <div style="margin-top: 20px; font-size: 18px; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 50px; display: inline-block;">
+                <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 10px;"></i> 
+                <span style="font-weight: bold;">0852-7486-3811</span>
+            </div>
+            
+            <div style="margin-top: 25px; font-size: 13px; opacity: 0.7;">
+                *Harga dapat berubah sesuai tingkat kesulitan • Fast Response 24 Jam
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Efek bubble
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            const size = Math.random() * 30 + 10;
+            bubble.style.width = size + 'px';
+            bubble.style.height = size + 'px';
+            bubble.style.left = Math.random() * 100 + '%';
+            bubble.style.bottom = '0';
+            bubble.style.animation = `bubble ${Math.random() * 3 + 2}s ease-in infinite`;
+            document.querySelector('.brochure').appendChild(bubble);
+            
+            setTimeout(() => {
+                bubble.remove();
+            }, 5000);
+        }
+
+        setInterval(createBubble, 500);
+    </script>
+</body>
+</html>
